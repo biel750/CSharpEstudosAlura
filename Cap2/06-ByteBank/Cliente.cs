@@ -8,6 +8,7 @@ namespace _06_ByteBank
 {
     public class Cliente
     {
+        //oi
         public string Nome { get; set; }
         public string CPF { get; set; }
         
