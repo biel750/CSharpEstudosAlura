@@ -22,10 +22,11 @@ namespace ByteBank
             roberta.CPF = "123.321.654-99";
             roberta.Salario = 5000;
 
+            
 
             Console.WriteLine(carlos.Nome);
             Console.WriteLine(carlos.GetBonificacao());
-
+             
             Console.WriteLine(roberta.Nome);
             Console.WriteLine(roberta.GetBonificacao());
 
@@ -38,7 +39,7 @@ namespace ByteBank
             
 
 
-
+             
             Console.Read();
         }
     }
