@@ -11,36 +11,52 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            Funcionario carlos = new Funcionario();
-
-            carlos.Nome = "Carlos";
-            carlos.CPF = "481.913.38-82";
-            carlos.Salario = 2000;
-
-            Diretor roberta = new Diretor();
-            roberta.Nome = "Roberta";
-            roberta.CPF = "123.321.654-99";
-            roberta.Salario = 5000;
-
-            
-
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
-             
-            Console.WriteLine(roberta.Nome);
-            Console.WriteLine(roberta.GetBonificacao());
-
-
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-            gerenciador.Registrar(carlos);
-            gerenciador.Registrar(roberta);
-
-            Console.WriteLine("Total de bonificações: R$" + gerenciador.GetTotalBonificacao());
-            
-
-
+            CalcularBonificacao();
              
             Console.Read();
         }
+
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+
+            Designer pedro = new Designer("481.913.388-82");
+            pedro.Nome = "Pedro";
+
+            Diretor roberta = new Diretor("111.111.111-11");
+            roberta.Nome = "Roberta";
+
+            Auxiliar igor = new Auxiliar("033.950.828-06");
+            igor.Nome = "Igor";
+
+            GerenteDeConta camila = new GerenteDeConta("481.913.388-82");
+            camila.Nome = "Camila";
+
+            Desenvolvedor gabriel = new Desenvolvedor("481.913.388-82");
+            gabriel.Nome = "Gabriel";
+
+            gerenciador.Registrar(pedro);
+            gerenciador.Registrar(roberta);
+            gerenciador.Registrar(igor);
+            gerenciador.Registrar(camila);
+            gerenciador.Registrar(gabriel);
+
+            Console.WriteLine("Total de bonificações do mês R$ " + gerenciador.GetTotalBonificacao());
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
     }
 }
