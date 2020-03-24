@@ -15,6 +15,8 @@ namespace ByteBank.Funcionarios
         public string Nome { get; set; }
         public string CPF { get; private set; }
         public double Salario { get; protected set; }
+
+        
         //protected pode ser usado na classe base e nas derivadas
         public Funcionario(double salario, string cpf)
         {
@@ -31,8 +33,8 @@ namespace ByteBank.Funcionarios
 
         //virtual para indicar que o metodo vai ser sobreescrito
         public abstract double GetBonificacao();
-      
 
+        
 
 
 

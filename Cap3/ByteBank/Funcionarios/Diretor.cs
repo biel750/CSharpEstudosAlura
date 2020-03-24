@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Diretor : Autenticavel
     {
+        
+
         //toda vez que eu chamo um diretor da classe derivada
         //automaticamente chama o construtor da classe base
         //primeiro executa o construtor da classe base
@@ -29,7 +32,7 @@ namespace ByteBank.Funcionarios
             return this.Salario * 0.5;
         }
 
-
+    
 
 
 
