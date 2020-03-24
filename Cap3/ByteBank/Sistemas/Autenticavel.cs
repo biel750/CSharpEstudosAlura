@@ -14,7 +14,7 @@ namespace ByteBank.Sistemas
         //por mais que seja abstrata tem que preecher os parametros da classe base
         public Autenticavel(double salario, string cpf) : base(salario,cpf)
         {
-
+            //construtor
         }
 
         public bool Autenticar(string senha)
