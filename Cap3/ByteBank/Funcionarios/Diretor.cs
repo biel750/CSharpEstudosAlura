@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel
+    // primeiro a classe depois a interface
+    public class Diretor : FuncionarioAutenticavel
     {
+        
         
 
         //toda vez que eu chamo um diretor da classe derivada

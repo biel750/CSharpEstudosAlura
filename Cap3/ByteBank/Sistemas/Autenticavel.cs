@@ -7,20 +7,12 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Sistemas
 {
-    public abstract class Autenticavel : Funcionario
+    public interface Autenticavel
     {
-        public string Senha { get; set; }
 
-        //por mais que seja abstrata tem que preecher os parametros da classe base
-        public Autenticavel(double salario, string cpf) : base(salario,cpf)
-        {
-            //construtor
-        }
-
-        public bool Autenticar(string senha)
-        {
-            return Senha == senha;
-        }
+        //em uma interface todos os membros são publicos
+         bool Autenticar(string senha);
+        
 
 
 
