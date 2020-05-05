@@ -10,46 +10,50 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
+
             try
+            {
+                ContaCorrente conta = new ContaCorrente(0, 0);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ParamName);
+            }
+
+
+            /*try
             {
                 Metodo();
             }
-            catch (DivideByZeroException)
+            catch (DivideByZeroException e) 
             {
-                Console.WriteLine("Não é possível divisão por zero");
+                Console.WriteLine("Não é possível divisão por zero.");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
-                Console.WriteLine("Aconteceu um erro !");
+                Console.WriteLine("Aconteceu um erro!");
             }
-
+            */
             Console.ReadLine();
         }
 
-        static void Metodo()
+        // Teste com a cadeia de chamada:
+        // Metodo -> TestaDivisao -> Dividir
+        private static void Metodo()
         {
-            try
-            {
-                TestaDivisao(0);
-            }
-            catch (NullReferenceException excecao)
-            {
-                Console.WriteLine(excecao.Message);
-                Console.WriteLine(excecao.StackTrace);
-            }
-
-
+            TestaDivisao(0);
         }
 
-        static void TestaDivisao(int divisor)
+        private static void TestaDivisao(int divisor)
         {
-                int resultado = Dividir(10, divisor);
-                Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
+            int resultado = Dividir(10, divisor);
+            Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
         }
 
-        static int Dividir(int numero, int divisor)
+        private static int Dividir(int numero, int divisor)
         {
             try
             {
@@ -57,13 +61,10 @@ namespace ByteBank
             }
             catch (DivideByZeroException)
             {
-                Console.WriteLine("Exceção com número = " + numero + " e divisor = " + divisor);
+                Console.WriteLine("Exceção com numero=" + numero + " e divisor=" + divisor);
                 throw;
-            }            
-            
+                Console.WriteLine("Código depois do throw");
+            }
         }
-
-
-
     }
-}   
+}
